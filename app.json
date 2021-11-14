@@ -4,9 +4,9 @@
     "slug": "projekt",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/start.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/start.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
