@@ -1,29 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { View, Text, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { MaterialIcons } from 'react-native-vector-icons';
 
-import HelpScreen from './screens/HelpScreen.js'
-import ProductScreen from './screens/ProductScreen.js'
-
-function Home() {
+const App = () => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Strona domowa</Text>
-    </View>
+      <View style={{flex:1,backgroundColor:'#fff',justifyContent:'center',alignItems:'center'}}>
+        {/* <Text style={{fontSize:30,fontWeight:'bold',color:'#20305f'}}>
+          GAME ON!
+        </Text> */}
+        <Image style={{width:395, height:395}} source={require('./assets/gaming.png')} />
+        <TouchableOpacity style={{backgroundColor:'#5f0a87',padding:20,width:350,borderRadius:35,flexDirection:'row',justifyContent:'space-between'}}>
+          <Text style={{fontSize:18,fontWeight:'bold', color:'#fff'}}>
+            Zaczynajmy!
+          </Text>
+          <MaterialIcons name="arrow-forward-ios" size={22} color="#fff" />
+        </TouchableOpacity>
+      </View>
   );
 }
 
-const Drawer = createDrawerNavigator();
-
-const Navigation = () => {
-  return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="Help" component={HelpScreen} />
-      <Drawer.Screen name="Products" component={ProductScreen} />
-    </Drawer.Navigator>
-  );
-}
-
-export default Navigation
+export default App
