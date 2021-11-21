@@ -1,23 +1,28 @@
-import React from 'react';
-import { View, Text, Image } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { MaterialIcons } from 'react-native-vector-icons';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import "react-native-gesture-handler";
 
-const App = () => {
-  return (
-      <View style={{flex:1,backgroundColor:'#fff',justifyContent:'center',alignItems:'center'}}>
-        {/* <Text style={{fontSize:30,fontWeight:'bold',color:'#20305f'}}>
-          GAME ON!
-        </Text> */}
-        <Image style={{width:395, height:395}} source={require('./assets/gaming.png')} />
-        <TouchableOpacity style={{backgroundColor:'#5f0a87',padding:20,width:350,borderRadius:35,flexDirection:'row',justifyContent:'space-between'}}>
-          <Text style={{fontSize:18,fontWeight:'bold', color:'#fff'}}>
-            Zaczynajmy!
-          </Text>
-          <MaterialIcons name="arrow-forward-ios" size={22} color="#fff" />
-        </TouchableOpacity>
-      </View>
-  );
+import SplashScreen from "./screens/SplashScreen";
+import NavigationScreen from "./screens/NavigationScreen";
+
+const Stack = createStackNavigator();
+
+export default function App() {
+	return (
+		<NavigationContainer>
+			<Stack.Navigator>
+				<Stack.Screen
+					name="Splash"
+					component={SplashScreen}
+					options={{ headerShown: false }}
+				/>
+				<Stack.Screen
+					name="NavigationScreen"
+					component={NavigationScreen}
+					options={{ headerShown: false }}
+				/>
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
 }
-
-export default App
