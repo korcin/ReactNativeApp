@@ -3,19 +3,19 @@ import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { TouchableOpacity } from "react-native-gesture-handler";
-// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HelpScreen from "./HelpScreen.js";
 import ProductScreen from "./ProductScreen.js";
 
-// const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 function Start() {
 	return (
 		<LinearGradient colors={["#380036", "#0cbaba"]} style={{ flex: 1 }}>
 			<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 				<Text style={styles.text}>
-					Witaj na stronie głównej! Wybierz kategorię sprzętów, które cię
+					Witaj na stronie głównej! Wybierz kategorię sprzętów, która cię
 					interesują.
 				</Text>
 
@@ -107,18 +107,6 @@ function Start() {
 				>
 					Telewizory
 				</Text>
-				{/* <Tab.Navigator>
-				<Tab.Screen
-					name="Pomoc"
-					component={HelpScreen}
-					options={{ headerShown: false }}
-				/>
-				<Tab.Screen
-					name="Produkty"
-					component={ProductScreen}
-					options={{ headerShown: false }}
-				/>
-			</Tab.Navigator> */}
 			</ScrollView>
 		</LinearGradient>
 	);
