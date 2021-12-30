@@ -36,7 +36,7 @@ const DetailsScreen = ({navigation, route}) => {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 22, fontWeight: 'bold'}}>{product.name}</Text>
+          <Text style={{fontSize: 20, fontWeight: 'bold'}}>{product.name}</Text>
           <View style={style.priceTag}>
             <Text
               style={{
@@ -50,7 +50,7 @@ const DetailsScreen = ({navigation, route}) => {
           </View>
         </View>
         <View style={{paddingHorizontal: 20, marginTop: 10}}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>About</Text>
+          <Text style={{fontSize: 18, fontWeight: 'bold'}}>O produkcie</Text>
           <Text
             style={{
               color: 'white',
