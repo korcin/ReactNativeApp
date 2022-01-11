@@ -25,7 +25,6 @@ const DetailsScreen = ({navigation, route}) => {
             flexDirection: 'row',
             alignItems: 'flex-end',
           }}>
-          <View style={style.line} />
           <Text style={{fontSize: 18, fontWeight: 'bold'}}>Najlepszy wybór</Text>
         </View>
         <View
@@ -36,7 +35,7 @@ const DetailsScreen = ({navigation, route}) => {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>{product.name}</Text>
+          <Text style={{fontSize: 25, fontWeight: 'bold'}}>{product.name}</Text>
           <View style={style.priceTag}>
             <Text
               style={{

@@ -1,9 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
+import { View, Text, StyleSheet, Dimensions, Image, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialIcons } from "react-native-vector-icons";
 import product from "../screens/const/product.js";
-//import DetailsScreen from "./DetailsScreen";
 import { FlatList, TextInput, TouchableOpacity } from "react-native-gesture-handler";
 
 const width = Dimensions.get("screen").width/2-30;
@@ -32,6 +31,11 @@ const ProductScreen = ({navigation}) => {
 
 	const Card = ({product}) => {
 		return (
+		<SafeAreaView style={{
+			flex: 1,
+			marginLeft:12,
+			justifyContent:'center',
+		  }}>
 		<TouchableOpacity onPress={() => navigation.navigate("DetailsScreen",product)}>
 		<View style={styles.card}>
 			<View style={{alignItems:'flex-end', margin:10}}>
@@ -64,6 +68,7 @@ const ProductScreen = ({navigation}) => {
 				</View>
 		</View>
 		</TouchableOpacity>
+		</SafeAreaView>
 		);
 	}
 

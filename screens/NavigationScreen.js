@@ -19,94 +19,52 @@ function Start() {
 					interesują.
 				</Text>
 
+				<View style={styles.container}>
 				<TouchableOpacity style={{ position: "relative", marginTop: 20 }}>
 					<Image
-						style={{
-							backgroundColor: "#fff",
-							width: 150,
-							height: 150,
-							borderRadius: 15,
-							left: 125,
-						}}
+						style={styles.img}
 						source={require("../assets/console1.png")}
 					/>
 				</TouchableOpacity>
 				<Text
-					style={{
-						position: "relative",
-						color: "#fff",
-						fontSize: 20,
-						left: 160,
-					}}
+					style={styles.txtimg}
 				>
 					Konsole
 				</Text>
 				<TouchableOpacity style={{ position: "relative", marginTop: 20 }}>
 					<Image
-						style={{
-							backgroundColor: "#fff",
-							width: 150,
-							height: 150,
-							borderRadius: 15,
-							left: 125,
-						}}
+						style={styles.img}
 						source={require("../assets/computer1.png")}
 					/>
 				</TouchableOpacity>
 				<Text
-					style={{
-						position: "relative",
-						color: "#fff",
-						fontSize: 20,
-						left: 160,
-					}}
+					style={styles.txtimg}
 				>
 					Komputery
 				</Text>
 				<TouchableOpacity style={{ position: "relative", marginTop: 20 }}>
 					<Image
-						style={{
-							backgroundColor: "#fff",
-							width: 150,
-							height: 150,
-							borderRadius: 15,
-							left: 125,
-						}}
+						style={styles.img}
 						source={require("../assets/smartphone1.png")}
 					/>
 				</TouchableOpacity>
 				<Text
-					style={{
-						position: "relative",
-						color: "#fff",
-						fontSize: 20,
-						left: 160,
-					}}
+					style={styles.txtimg}
 				>
 					Telefony
 				</Text>
 				<TouchableOpacity style={{ position: "relative", marginTop: 20 }}>
 					<Image
-						style={{
-							backgroundColor: "#fff",
-							width: 150,
-							height: 150,
-							borderRadius: 15,
-							left: 125,
-						}}
+						style={styles.img}
 						source={require("../assets/television1.png")}
 					/>
 				</TouchableOpacity>
 				<Text
-					style={{
-						position: "relative",
-						color: "#fff",
-						fontSize: 20,
-						left: 160,
-					}}
+					style={styles.txtimg}
 				>
 					Telewizory
 				</Text>
+			</View>
 			</ScrollView>
 		</LinearGradient>
 	);
@@ -145,6 +103,17 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		textAlign: "center",
 	},
+	img:{
+		backgroundColor: "#fff",
+		width: 150,
+		height: 150,
+		borderRadius: 15,
+	},
+	txtimg:{
+		color: "#fff",
+		fontSize: 20,
+		textAlign: "center",
+	}
 });
 
 export default NavigationScreen;
