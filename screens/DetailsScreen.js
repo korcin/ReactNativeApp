@@ -9,7 +9,7 @@ const DetailsScreen = ({navigation, route}) => {
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: 'grey',
+        backgroundColor: 'white',
       }}>
       <View style={style.header}>
         <MaterialIcons name="arrow-back" size={28} onPress={() => navigation.goBack()} />
