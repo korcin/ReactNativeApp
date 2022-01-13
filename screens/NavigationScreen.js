@@ -4,13 +4,14 @@ import { LinearGradient } from "expo-linear-gradient";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import product from "../screens/const/product.js";
 
 import HelpScreen from "./HelpScreen.js";
 import ProductScreen from "./ProductScreen.js";
 
 const Tab = createBottomTabNavigator();
 
-function Start() {
+function Start({navigation}) {
 	return (
 		<LinearGradient colors={["#380036", "#0cbaba"]} style={{ flex: 1 }}>
 			<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
@@ -20,7 +21,9 @@ function Start() {
 				</Text>
 
 				<View style={styles.container}>
-				<TouchableOpacity style={{ position: "relative", marginTop: 20 }}>
+				<TouchableOpacity 
+				style={{ position: "relative", marginTop: 20 }}
+				onPress={() => navigation.navigate("DetailsScreen",product)}>
 					<Image
 						style={styles.img}
 						source={require("../assets/console1.png")}
