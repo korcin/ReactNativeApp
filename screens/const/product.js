@@ -1,6 +1,7 @@
 const product = [
     { 
         id: 1,
+        category: 'Konsola',
         name: 'Xbox Series X',
         price: '2799.00',
         like: true,
@@ -11,6 +12,7 @@ const product = [
 
     {
         id: 2,
+        category: 'Konsola',
         name: 'PlayStation 5',
         price: '4399.00',
         like: false,
@@ -21,6 +23,7 @@ const product = [
 
     {
         id: 3,
+        category: 'Komputer',
         name:'G4M3R HERO',
         like: false,
         price: '7450.00',
@@ -31,6 +34,7 @@ const product = [
 
     {
         id: 4,
+        category: 'Komputer',
         name: 'G4M3R ELITE',
         price: '10 800.00',
         like: true,
@@ -41,6 +45,7 @@ const product = [
 
     {
         id: 5,
+        category: 'Telefon',
         name:'Xiaomi POCO X3 PRO',
         price: '1199.00',
         like: true,
@@ -51,6 +56,7 @@ const product = [
 
     {
         id: 6,
+        category: 'Telefon',
         name:'Apple iPhone 13 Pro',
         price: '8199.00',
         like: false,
@@ -61,6 +67,7 @@ const product = [
 
     {
         id: 7,
+        category: 'Telewizor',
         name:'Philips 58PUS7855',
         price: '1999.00',
         like: false,
@@ -71,6 +78,7 @@ const product = [
 
     {
         id: 8,
+        category: 'Telewizor',
         name: 'LG OLED83C11LA',
         price: '23 999.00',
         like: true,

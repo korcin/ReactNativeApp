@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, SafeAreaView, Image, Text, StyleSheet} from 'react-native';
+import {View, SafeAreaView, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { MaterialIcons } from "react-native-vector-icons";
 
 const DetailsScreen = ({navigation, route}) => {
@@ -9,7 +9,7 @@ const DetailsScreen = ({navigation, route}) => {
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: 'grey',
+        backgroundColor: 'white',
       }}>
       <View style={style.header}>
         <MaterialIcons name="arrow-back" size={28} onPress={() => navigation.goBack()} />
@@ -86,12 +86,14 @@ const DetailsScreen = ({navigation, route}) => {
               </View>
             </View>
 
+          <TouchableOpacity>
             <View style={style.buyBtn}>
               <Text
                 style={{color: 'white', fontSize: 18, fontWeight: 'bold'}}>
                 Buy
               </Text>
             </View>
+          </TouchableOpacity>
           </View>
         </View>
       </View>

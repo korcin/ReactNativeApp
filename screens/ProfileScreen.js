@@ -2,11 +2,11 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-const HelpScreen = () => {
+const ProfileScreen = ({navigation}) => {
 	return (
-		<LinearGradient colors={["#380036", "#0cbaba"]} style={{ flex: 1 }}>
+		<LinearGradient colors={["#0cbaba", "#380036"]} style={{ flex: 1 }}>
 			<View style={styles.container}>
-				<Text style={styles.text}>Pomoc</Text>
+				<Text style={styles.text}>Twój profil</Text>
 			</View>
 		</LinearGradient>
 	);
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 		container: {
 		flex: 1,
 		justifyContent: "flex-start",
-		padding: 40,
+		marginTop: 100,
 	},
 	background: {
 		position: "absolute",
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default HelpScreen;
+export default ProfileScreen;

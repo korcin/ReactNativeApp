@@ -3,7 +3,8 @@ import { View, Text, StyleSheet, Dimensions, Image, SafeAreaView } from "react-n
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialIcons } from "react-native-vector-icons";
 import product from "../screens/const/product.js";
-import { FlatList, TextInput, TouchableOpacity } from "react-native-gesture-handler";
+import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
+import { Searchbar } from 'react-native-paper';
 
 const width = Dimensions.get("screen").width/2-30;
 
@@ -47,8 +48,7 @@ const ProductScreen = ({navigation}) => {
 					justifyContent:'center',
 					backgroundColor: product.like
 					? 'rgba(245, 42, 42, 0.2)'
-					: 'rgba(0, 0, 0, 0.2)',
-				}}>
+					: 'rgba(0, 0, 0, 0.2)',}}>
 					<MaterialIcons name="favorite" size={18} color={product.like ? 'rgb(245, 42, 42)' : 'rgb(0, 0, 0)'}/>
 				</View>
 				
@@ -66,7 +66,7 @@ const ProductScreen = ({navigation}) => {
 						<Text style={{fontSize:20,fontWeight:'bold',color:'white'}}>+</Text>
 					</View>
 				</View>
-		</View>
+			</View>
 		</TouchableOpacity>
 		</SafeAreaView>
 		);
@@ -80,8 +80,7 @@ const ProductScreen = ({navigation}) => {
 			<View style={styles.container}>
 
 				<View style={styles.searchContainer}>
-					<MaterialIcons name="search" size={25} style={{marginLeft: 20}} />
-					<TextInput placeholder="Szukaj" />
+					<Searchbar placeholder="Szukaj"/>
 				</View>
 
 				<View style={styles.sortBtn}>
@@ -106,12 +105,7 @@ const styles = StyleSheet.create({
 		flexDirection:'row',
 	},
 	searchContainer: {
-		height:50,
-		backgroundColor: 'white',
-		borderRadius:10,
 		flex:1,
-		flexDirection: 'row',
-		alignItems:'center',
 	},
 	sortBtn:{
 		marginLeft:10,

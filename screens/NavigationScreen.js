@@ -4,14 +4,14 @@ import { LinearGradient } from "expo-linear-gradient";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import product from "../screens/const/product.js";
+// import product from "../screens/const/product.js";
 
-import HelpScreen from "./HelpScreen.js";
+import LoginScreen from "./LoginScreen.js";
 import ProductScreen from "./ProductScreen.js";
 
 const Tab = createBottomTabNavigator();
 
-function Start({navigation}) {
+function Start() {
 	return (
 		<LinearGradient colors={["#380036", "#0cbaba"]} style={{ flex: 1 }}>
 			<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
@@ -22,8 +22,7 @@ function Start({navigation}) {
 
 				<View style={styles.container}>
 				<TouchableOpacity 
-				style={{ position: "relative", marginTop: 20 }}
-				onPress={() => navigation.navigate("DetailsScreen",product)}>
+				style={{ position: "relative", marginTop: 20 }}>
 					<Image
 						style={styles.img}
 						source={require("../assets/console1.png")}
@@ -80,7 +79,7 @@ const NavigationScreen = () => {
 		<Drawer.Navigator>
 			<Drawer.Screen name="Strona domowa" component={Start} />
 			<Drawer.Screen name="Produkty" component={ProductScreen} />
-			<Drawer.Screen name="Pomoc" component={HelpScreen} />
+			<Drawer.Screen name="Zaloguj się" component={LoginScreen} />
 		</Drawer.Navigator>
 	);
 };
