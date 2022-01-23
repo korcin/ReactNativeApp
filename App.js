@@ -7,6 +7,7 @@ import SplashScreen from "./screens/SplashScreen";
 import NavigationScreen from "./screens/NavigationScreen";
 import DetailsScreen from "./screens/DetailsScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import CameraScreen from "./screens/CameraScreen";
 
 const Stack = createStackNavigator();
 
@@ -32,6 +33,11 @@ export default function App() {
 				<Stack.Screen
 				name="ProfileScreen"
 				component={ProfileScreen}
+				options={{ headerShown: false }}
+				/>
+				<Stack.Screen 
+				name="CameraScreen"
+				component={CameraScreen}
 				options={{ headerShown: false }}
 				/>
 			</Stack.Navigator>
