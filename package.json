@@ -7,7 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "server": "npx json-server -p3001 --watch db.json"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.16",
@@ -18,6 +19,7 @@
     "@react-navigation/native-stack": "^6.2.5",
     "@react-navigation/stack": "^6.0.11",
     "any": "^1.0.0",
+    "axios": "^0.25.0",
     "expo": "^43.0.3",
     "expo-camera": "^12.1.0",
     "expo-cli": "^4.13.0",

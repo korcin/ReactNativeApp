@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { Camera } from 'expo-camera';
+import React, { useState, useEffect } from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { Camera } from "expo-camera";
 
 export default function App() {
   const [hasPermission, setHasPermission] = useState(null);
@@ -9,7 +9,7 @@ export default function App() {
   useEffect(() => {
     (async () => {
       const { status } = await Camera.requestCameraPermissionsAsync();
-      setHasPermission(status === 'granted');
+      setHasPermission(status === "granted");
     })();
   }, []);
 
@@ -31,7 +31,8 @@ export default function App() {
                   ? Camera.Constants.Type.front
                   : Camera.Constants.Type.back
               );
-            }}>
+            }}
+          >
             <Text style={styles.text}> Flip </Text>
           </TouchableOpacity>
         </View>
@@ -41,25 +42,25 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    camera: {
-      flex: 1,
-    },
-    buttonContainer: {
-      flex: 1,
-      backgroundColor: 'transparent',
-      flexDirection: 'row',
-      margin: 20,
-    },
-    button: {
-      flex: 0.1,
-      alignSelf: 'flex-end',
-      alignItems: 'center',
-    },
-    text: {
-      fontSize: 18,
-      color: 'white',
-    },
-  });
+  container: {
+    flex: 1,
+  },
+  camera: {
+    flex: 1,
+  },
+  buttonContainer: {
+    flex: 1,
+    backgroundColor: "transparent",
+    flexDirection: "row",
+    margin: 20,
+  },
+  button: {
+    flex: 0.1,
+    alignSelf: "flex-end",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 18,
+    color: "white",
+  },
+});
