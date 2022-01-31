@@ -12,6 +12,7 @@ import {
   Container,
 } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { LinearGradient } from "expo-linear-gradient";
 import axios from "axios";
 import Task from "./Task";
 import { COMPLAINT } from "./const/DataBase";
@@ -100,111 +101,120 @@ function Start() {
 
   return (
     <View style={styles.container}>
-      <ScrollView>
-        <View style={styles.tasksWrapper}>
-          <Text style={styles.sectionTitle}>Reklamacje</Text>
-          <View style={styles.items}>
-            {taskItems &&
-              taskItems.map((item, index) => {
-                return (
-                  <TouchableOpacity key={index} onPress={() => checkItem(item)}>
-                    <Task text={item} />
-                  </TouchableOpacity>
-                );
-              })}
+      <LinearGradient colors={["#0cbaba", "#380036"]} style={{ flex: 1 }}>
+        <ScrollView>
+          <View style={styles.tasksWrapper}>
+            <Text style={styles.sectionTitle}>Reklamacje</Text>
+            <View style={styles.items}>
+              {taskItems &&
+                taskItems.map((item, index) => {
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      onPress={() => checkItem(item)}
+                    >
+                      <Task text={item} />
+                    </TouchableOpacity>
+                  );
+                })}
+            </View>
           </View>
-        </View>
 
-        <NativeBaseProvider>
-          <Menu
-            w="100"
-            shouldOverlapWithTrigger={shouldOverlapWithTrigger} // @ts-ignore
-            placement={position == "auto" ? undefined : position}
-            trigger={(triggerProps) => {
-              return (
-                <Button
-                  alignSelf="center"
-                  variant="solid"
-                  {...triggerProps}
-                  style={styles.NoteButton}
-                >
-                  Note Menu
-                </Button>
-              );
-            }}
-          >
-            <Menu.Item alignItems={"center"} onPress={() => setShowModal(true)}>
-              Add
-            </Menu.Item>
-            <Menu.Item
-              alignItems={"center"}
-              onPress={() => removeData(itemContent.id)}
+          <NativeBaseProvider>
+            <Menu
+              w="100"
+              shouldOverlapWithTrigger={shouldOverlapWithTrigger} // @ts-ignore
+              placement={position == "auto" ? undefined : position}
+              trigger={(triggerProps) => {
+                return (
+                  <Button
+                    alignSelf="center"
+                    variant="solid"
+                    {...triggerProps}
+                    style={styles.NoteButton}
+                  >
+                    Menu reklamacji
+                  </Button>
+                );
+              }}
             >
-              Delete
-            </Menu.Item>
-          </Menu>
+              <Menu.Item
+                alignItems={"center"}
+                onPress={() => setShowModal(true)}
+              >
+                Dodaj
+              </Menu.Item>
+              <Menu.Item
+                alignItems={"center"}
+                onPress={() => removeData(itemContent.id)}
+              >
+                Usuń
+              </Menu.Item>
+            </Menu>
 
-          <Center flex={1} px="3">
-            <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-              <Modal.Content maxWidth="400px">
-                <Modal.CloseButton />
-                <Modal.Header>Reklamacje</Modal.Header>
-                <Modal.Body>
-                  <FormControl>
-                    <FormControl.Label>Title</FormControl.Label>
-                    <Input
-                      placeholder="Title"
-                      onChangeText={(message) => setTitle(message)}
-                    />
-                  </FormControl>
-                  <FormControl mt="1">
-                    <FormControl.Label>Note Content</FormControl.Label>
-                    <TextArea
-                      placeholder="Note"
-                      onChangeText={(message) => setDescription(message)}
-                    ></TextArea>
-                  </FormControl>
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button.Group space={1}>
-                    <Button
-                      variant="ghost"
-                      colorScheme="blueGray"
-                      onPress={() => {
-                        setShowModal(false);
-                      }}
-                    >
-                      Cancel
-                    </Button>
-                    <Button
-                      onPress={() => {
-                        handleAddTask();
-                        setShowModal(false);
-                      }}
-                    >
-                      Save
-                    </Button>
-                  </Button.Group>
-                </Modal.Footer>
-              </Modal.Content>
-            </Modal>
-          </Center>
-
-          <Center flex={1} px="3">
-            <Modal isOpen={showNote} onClose={() => setShowNote(false)}>
-              <Modal.Content maxWidth="400px">
-                <Modal.CloseButton />
-                <Modal.Header>
-                  <Text style={styles.itemText}>{itemContent.title}</Text>
-                </Modal.Header>
-                <Modal.Body>
-                  <Text style={styles.itemText}>{itemContent.description}</Text>
-                </Modal.Body>
-              </Modal.Content>
-            </Modal>
-          </Center>
-        </NativeBaseProvider>
-      </ScrollView>
+            <Center flex={1} px="3">
+              <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+                <Modal.Content maxWidth="400px">
+                  <Modal.CloseButton />
+                  <Modal.Header>Reklamacje</Modal.Header>
+                  <Modal.Body>
+                    <FormControl>
+                      <FormControl.Label>Tytuł</FormControl.Label>
+                      <Input
+                        placeholder="Tytuł"
+                        onChangeText={(message) => setTitle(message)}
+                      />
+                    </FormControl>
+                    <FormControl mt="5">
+                      <FormControl.Label>Opis reklamacji</FormControl.Label>
+                      <TextArea
+                        placeholder="Opis"
+                        onChangeText={(message) => setDescription(message)}
+                      ></TextArea>
+                    </FormControl>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button.Group space={1}>
+                      <Button
+                        variant="ghost"
+                        colorScheme="blueGray"
+                        onPress={() => {
+                          setShowModal(false);
+                        }}
+                      >
+                        Anuluj
+                      </Button>
+                      <Button
+                        onPress={() => {
+                          handleAddTask();
+                          setShowModal(false);
+                        }}
+                      >
+                        Zapisz
+                      </Button>
+                    </Button.Group>
+                  </Modal.Footer>
+                </Modal.Content>
+              </Modal>
+            </Center>
+            <Center flex={1} px="3">
+              <Modal isOpen={showNote} onClose={() => setShowNote(false)}>
+                <Modal.Content maxWidth="400px">
+                  <Modal.CloseButton />
+                  <Modal.Header>
+                    <Text style={styles.itemText}>{itemContent.title}</Text>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Text style={styles.itemText}>
+                      {itemContent.description}
+                    </Text>
+                  </Modal.Body>
+                </Modal.Content>
+              </Modal>
+            </Center>
+          </NativeBaseProvider>
+        </ScrollView>
+      </LinearGradient>
     </View>
   );
 }
@@ -223,6 +233,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 40,
     textAlign: "center",
+    color: "black",
   },
   items: {
     marginTop: 30,
