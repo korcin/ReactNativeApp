@@ -1,0 +1,14 @@
+{
+  "complaints": [
+    {
+      "id": 3,
+      "title": "Telewizor",
+      "description": "Uszkodzony piksel"
+    },
+    {
+      "id": 4,
+      "title": "Telefon",
+      "description": "Uszkodzony port ładowania "
+    }
+  ]
+}
